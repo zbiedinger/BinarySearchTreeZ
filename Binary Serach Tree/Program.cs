@@ -12,21 +12,37 @@ namespace Binary_Serach_Tree
         {
             BinarySearchTree tree = new BinarySearchTree();
 
-            Node node1 = new Node(1);
-            Node node2 = new Node(2);
-            Node node3 = new Node(3);
-            Node node4 = new Node(4);
-            Node node5 = new Node(5);
-            Node node6 = new Node(6);
-            Node node7 = new Node(7);
+            Node node10 = new Node(10);
+            Node node20 = new Node(20);
+            Node node30 = new Node(30);
+            Node node40 = new Node(40);
+            Node node50 = new Node(50);
+            Node node60 = new Node(60);
+            Node node70 = new Node(70);
 
-            tree.Add(node1);
-            tree.Add(node2);
-            tree.Add(node3);
-            tree.Add(node4);
-            tree.Add(node5);
-            tree.Add(node6);
-            tree.Add(node7);
+            Node node15 = new Node(15);
+            Node node25 = new Node(25);
+            Node node35 = new Node(35);
+            Node node45 = new Node(45);
+            Node node55 = new Node(55);
+            Node node65 = new Node(65);
+            Node node75 = new Node(75);
+
+
+            tree.Add(node40);
+            tree.Add(node50);
+            tree.Add(node15);
+            tree.Add(node25);
+            tree.Add(node25);
+            tree.Add(node20);
+            tree.Add(node10);
+            tree.Add(node30);
+            tree.Add(node75);
+            tree.Add(node75);
+            tree.Add(node10);
+            tree.Add(node60);
+            tree.Add(node35);
+            tree.Add(node70);
 
         }
     }

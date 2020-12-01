@@ -10,12 +10,15 @@ namespace Binary_Serach_Tree
     {
         //Member Variables
         public Node RootNode;
+        public Node LastNode;
+
 
         //constructor
         public BinarySearchTree()
         {
 
         }
+
 
         //Member Methods
         public Node sort(Node nodeTosort)
@@ -30,34 +33,35 @@ namespace Binary_Serach_Tree
             if (RootNode == null)
             {
                 RootNode = nodeToAdd;
+                LastNode = nodeToAdd;
             }
             else
             {
-                Node nextNode = RootNode;
+                Node node = RootNode;
                 while (true)
                 {
-                    if (nodeToAdd.data <= nextNode.data)//goes left
+                    if (nodeToAdd.data <= node.data)//goes left
                     {
-                        if (nextNode.LeftChildNode == null)
+                        if(node.LeftChildNode == null)
                         {
-                            nextNode.LeftChildNode = new Node(nodeToAdd.data);
+                            RootNode.LeftChildNode = nodeToAdd;
                             break;
                         }
                         else
                         {
-                            nextNode = nextNode.LeftChildNode;
+                            node = node.LeftChildNode;
                         }
                     }
                     else//goes right
                     {
-                        if (nextNode.RightChildNode == null)
+                        if (node.RightChildNode == null)
                         {
-                            nextNode.RightChildNode = new Node(nodeToAdd.data);
+                            RootNode.RightChildNode = nodeToAdd;
                             break;
                         }
                         else
                         {
-                            nextNode = nextNode.RightChildNode;
+                            node = node.RightChildNode;
                         }
                     }
                 }
