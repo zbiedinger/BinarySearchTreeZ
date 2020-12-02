@@ -44,6 +44,12 @@ namespace Binary_Serach_Tree
             tree.Add(node35);
             tree.Add(node70);
 
+
+            Node nodeIWanted = tree.Search(60);
+            Node nodeIWantedToo = tree.Search(25);
+            Node nodeIWanted3 = tree.Search(100);
+
+            BinarySearchTree list = new BinarySearchTree() { 45, 20, node75, node25, 10 };
         }
     }
 }

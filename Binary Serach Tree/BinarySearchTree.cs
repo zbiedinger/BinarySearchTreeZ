@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Binary_Serach_Tree
 {
-    class BinarySearchTree
+    class BinarySearchTree : IEnumerable
     {
         //Member Variables
         public Node RootNode;
@@ -17,14 +18,14 @@ namespace Binary_Serach_Tree
 
         }
 
-        //Member Methods
-        public Node sort(Node nodeTosort)
+        //Adds the passed in int to the tree as A node
+        public void Add(int numToAdd)
         {
-            Node addedNode = new Node(1);
-            return addedNode;
+            Node nodeToAdd = new Node(numToAdd);
+            Add(nodeToAdd);
         }
 
-        //Adds a new node with the input data
+        //Adds the passed in node to the tree
         public void Add(Node nodeToAdd)
         {
             if (RootNode == null)
@@ -36,7 +37,7 @@ namespace Binary_Serach_Tree
                 Node nextNode = RootNode;
                 while (true)
                 {
-                    if (nodeToAdd.data <= nextNode.data)//goes left
+                    if (nodeToAdd.data <= nextNode.data)//Is new node in left tree
                     {
                         if (nextNode.LeftChildNode == null)
                         {
@@ -48,7 +49,7 @@ namespace Binary_Serach_Tree
                             nextNode = nextNode.LeftChildNode;
                         }
                     }
-                    else//goes right
+                    else//Is new node in right tree
                     {
                         if (nextNode.RightChildNode == null)
                         {
@@ -64,12 +65,33 @@ namespace Binary_Serach_Tree
             }
         }
 
-        //Searchs throught the binary tree for the passed value
-        public Node Search()
-        {
-            Node searchedNode = new Node(1);
 
-            return searchedNode;
+        //Searches through the binary tree for the passed value
+        //returns a null node if the tree is empty or the value can't be found
+        public Node Search(int numToFInd)
+        {
+            Node nextNode = RootNode;
+            while (nextNode != null)
+            {
+                if (numToFInd == nextNode.data)
+                {
+                    return nextNode;
+                }
+                else if (numToFInd < nextNode.data)
+                {
+                    nextNode = nextNode.LeftChildNode;
+                }
+                else
+                {
+                    nextNode = nextNode.RightChildNode;
+                }
+            }
+            return null;
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
     }
 }
